@@ -41,9 +41,11 @@
               <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
+            <a id="LoginGate">
             <span class="fa fa-sign-in"></span> Login</a>
         </span>
+        <!-- yukarıda yer alan modal aç kapaya ait kısımlardır, javascript için silindi
+          data-toggle="modal" data-target="#loginModal"-->
       </div>
       </div>
     </nav>
@@ -133,12 +135,12 @@
 
                   <div class="form-row">
                     <div class="form-group row">
-                      <p class="col-sm col-md-2">Section</p>
+                      <p class="col-sm col-md">Section</p>
                       <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
+                        <label class="btn btn-success active">
                           <input class="btn btn-success" type="radio" name="options" id="option1" autocomplete="off" checked> Non-smoking
                         </label>
-                        <label class="btn btn-secondary">
+                        <label class="btn btn-danger">
                           <input type="radio" name="options" id="option2" autocomplete="off"> Smoking
                         </label>
                         
@@ -197,9 +199,10 @@
           </div>
 
           <div class="col-12 col-sm-3 mt-5 mt-sm-0 align-self-center text-center">
-            <a type="button" class="btn btn-warning btn-sm btn-block" data-toggle="modal" data-target="#assignmentModal"
-            >Reserve Table</a>
+            <a type="button" class="btn btn-warning btn-sm btn-block" id="ReserveBtn">Reserve Table</a>
           </div>
+          <!-- yukarıdaki a tag inin içinde yer alıyordu, modal data attributes ile çalışırken.
+            data-toggle="modal" data-target="#assignmentModal"-->
 
           </div>
         </div>
@@ -427,6 +430,23 @@
         $("#carouselButton").children("span").addClass('fa-pause');                    
     }
 });
+</script>
+
+<script>
+  $(document).ready(function(){
+    $("#ReserveBtn").click(function(){
+      $("#assignmentModal").modal();
+    });
+  });
+   
+</script>
+
+<script>
+  $(document).ready(function(){
+    $("#LoginGate").click(function(){
+      $("#loginModal").modal();
+    });
+  });
 </script>
     
   </body>
